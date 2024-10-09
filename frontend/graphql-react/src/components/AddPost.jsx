@@ -1,14 +1,5 @@
-import { gql, useMutation } from "@apollo/client";
-
-const CREATE_POST = gql`
-  mutation CreatePost($title: String!, $content: String!) {
-    createPost(title: $title, content: $content) {
-      id
-      title
-      content
-    }
-  }
-`;
+import { useMutation } from "@apollo/client";
+import { CREATE_POST } from "../mutation/mutation";
 
 export default function AddPost({ refetch }) {
   const [createPost] = useMutation(CREATE_POST);

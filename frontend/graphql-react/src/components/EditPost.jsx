@@ -1,14 +1,5 @@
 import { useMutation } from "@apollo/client";
-import gql from "graphql-tag";
-
-const UPDATE_POST = gql`
-    mutation UpdatePost($id: ID!, $title: String!, $content: String!) {
-        updatePost(id: $id, title: $title, content: $content) {
-            id
-            title
-            content
-        }
-    }`;
+import { UPDATE_POST } from "../mutation/mutation";
 
 export default function EditPost({ editPost, setEditPost, refetch }) {
     const [updatePost] = useMutation(UPDATE_POST);

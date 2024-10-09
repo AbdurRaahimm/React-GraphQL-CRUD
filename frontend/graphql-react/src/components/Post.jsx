@@ -1,13 +1,7 @@
-import { gql, useMutation } from "@apollo/client";
+import {  useMutation } from "@apollo/client";
 import { useState } from "react";
 import EditPost from "./EditPost";
-
-const DELETE_POST = gql`
-    mutation DeletePost($id: ID!) {
-        deletePost(id: $id) {
-            id
-        }
-    }`;
+import { DELETE_POST } from "../mutation/mutation";
 
 export default function Post({ post, refetch }) {
     const [editPost, setEditPost] = useState(null);
