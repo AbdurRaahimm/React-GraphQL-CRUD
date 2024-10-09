@@ -32,7 +32,7 @@ function App() {
       <div className="flex gap-4 flex-wrap justify-center py-5">
         {
           posts.map(post => (
-            <Post key={post.id} post={post} />
+            <Post key={post.id} post={post} refetch={refetch} />
           ))
         }
       </div>
